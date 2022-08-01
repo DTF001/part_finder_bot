@@ -1,12 +1,13 @@
 import telebot
+from decouple import config
 import random as rdm
 import find_machine
 import dataset_vdtm
 import dataset_vd_airlines
 import lists_replies
-import bot_key
 
-bot = telebot.TeleBot(bot_key.key)
+key = config('key', default='')
+bot = telebot.TeleBot(key)
 
 
 # Функция, обрабатывающая команду /start
