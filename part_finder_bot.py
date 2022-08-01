@@ -1,32 +1,18 @@
 import telebot
 import random as rdm
 
-from find_machine import finder
-from find_machine import extra_finder
-from find_machine import extractor
-from find_machine import trax_inventory_explorer
+from find_machine import finder, extra_finder, extractor, trax_inventory_explorer
 
-from dataset_vdtm import inv_qry_vdtm
-from dataset_vdtm import pns_vdtm
-from dataset_vdtm import pns_vdtm_int
-from dataset_vdtm import pn_vdtm_category
-from dataset_vdtm import columns_vdtm
-from dataset_vdtm import wh_list_vdtm
+from dataset_vdtm import inv_qry_vdtm, pns_vdtm, pns_vdtm_int, pn_vdtm_category, columns_vdtm, wh_list_vdtm
 
-from dataset_vd_airlines import inv_qry_airlines
-from dataset_vd_airlines import pns_airlines
-from dataset_vd_airlines import pns_airlines_int
-from dataset_vd_airlines import pn_airlines_category
-from dataset_vd_airlines import columns_airlines
-from dataset_vd_airlines import wh_list_airlines
+from dataset_vd_airlines import inv_qry_airlines, pns_airlines, pns_airlines_int, \
+    pn_airlines_category, columns_airlines, wh_list_airlines
 
-from lists_replies import r_list
-from lists_replies import ok_list
-from lists_replies import nb_list
+from lists_replies import r_list, ok_list, nb_list
 
 # BOT_KEY
-
-bot = telebot.TeleBot('5375777787:AAHjFAjfGquE-BtZ7kCvemee-5dbKu9dPYw')
+key = '5375777787:AAHjFAjfGquE-BtZ7kCvemee-5dbKu9dPYw'
+bot = telebot.TeleBot(key)
 
 
 # Функция, обрабатывающая команду /start
