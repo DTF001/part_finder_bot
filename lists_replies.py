@@ -7,12 +7,12 @@ ok_list = list(['Проверяю доступные склады...',
                 'Сейчас посмотрим...'])
 
 # Рандомные предложение RFQ:
-r_list = list(['Нужна квотация? Пиши на yegor.vershinin@gmail.com',
-               'Отправлять квотации ботам пока не доверяют, поэтому напиши плз на yegor.vershinin@gmail.com',
-               'Думаю, мы можем это продать. Точно ответять вот тут: yegor.vershinin@gmail.com',
-               'С удовольствием проквотируем это для тебя, пиши на yegor.vershinin@gmail.com',
-               'Я бы проквотировал, но мне нельзя( Пиши на yegor.vershinin@gmail.com',
-               'Мы готовы обсудить продажу, ждем письмо на yegor.vershinin@gmail.com'])
+r_list = list(['Нужна квотация? Пиши на procurement.vdtm@volga-dnepr.com',
+               'Отправлять квотации ботам пока не доверяют, поэтому напиши плз на procurement.vdtm@volga-dnepr.com',
+               'Думаю, мы можем это продать. Точно ответять вот тут: procurement.vdtm@volga-dnepr.com',
+               'С удовольствием проквотируем это для тебя, пиши на procurement.vdtm@volga-dnepr.com',
+               'Я бы проквотировал, но мне нельзя( Пиши на procurement.vdtm@volga-dnepr.com',
+               'Мы готовы обсудить продажу, ждем письмо на procurement.vdtm@volga-dnepr.com'])
 
 nb_list = list(['Совсем ничего.',
                 'Ничего не нашел, извини.',
