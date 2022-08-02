@@ -6,8 +6,7 @@ import dataset_vdtm
 import dataset_vd_airlines
 import lists_replies
 
-key = config('key', default='')
-bot = telebot.TeleBot(key)
+bot = telebot.TeleBot('5375777787:AAHjFAjfGquE-BtZ7kCvemee-5dbKu9dPYw')
 
 
 # Функция, обрабатывающая команду /start
