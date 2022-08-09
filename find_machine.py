@@ -19,7 +19,7 @@ def finder(master, slave, your_pn):
 # EXTRA_PART_FINDER
 def extra_finder(slave, mat_type, precision, your_pn):
     print_list_adv = []
-    items_vdtm = process.extract(your_pn, slave, limit=10)
+    items_vdtm = process.extract(your_pn, slave, limit=5)
     for index in items_vdtm:
         if index[1] >= precision:
             for value in range(len(slave)):
