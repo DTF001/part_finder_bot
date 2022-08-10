@@ -35,9 +35,11 @@ def handle_text(m):
         else:
             extra_found = find_machine.extra_finder(slave=slave, master=master, your_pn=your_pn,
                                                     pn_category=pn_category)
+            print(extra_found)
             if extra_found:
                 result = find_machine.trax_inventory_explorer(inv_qry=inv_qry, columns=columns,
                                                               found=extra_found, warehouses=warehouses)
+                print(result)
                 if not result.empty:
                     result = result.to_string(index=False, header=False, justify='left')
                     bot.send_message(m.chat.id, 'Я нашёл в ' + company + ':')
