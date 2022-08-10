@@ -22,7 +22,7 @@ def handle_text(m):
     bot.send_message(m.chat.id, 'Запрошенный p/n: ' + requested_pn)
     bot.send_message(m.chat.id, rdm.choice(lists_replies.ok_list))
 
-    def checker(company, master, slave, your_pn, inv_qry, columns, warehouses):
+    def checker(company, master, slave, your_pn, inv_qry, columns, warehouses, pn_category):
         a = 0
         found = find_machine.finder(master=master, slave=slave, your_pn=your_pn)
         result = find_machine.trax_inventory_explorer(inv_qry=inv_qry, columns=columns, warehouses=warehouses,
@@ -33,7 +33,8 @@ def handle_text(m):
             bot.send_message(m.chat.id, str(result))
             a = 1
         else:
-            extra_found = find_machine.extra_finder(slave=slave, master=master, your_pn=your_pn)
+            extra_found = find_machine.extra_finder(slave=slave, master=master, your_pn=your_pn,
+                                                    pn_category=pn_category)
             if extra_found:
                 result = find_machine.trax_inventory_explorer(inv_qry=inv_qry, columns=columns,
                                                               found=extra_found, warehouses=warehouses)
@@ -45,12 +46,13 @@ def handle_text(m):
         return a
 
     vdt = checker(company='ВДТМ', master=dataset_vdtm.pns_vdtm, slave=dataset_vdtm.pns_vdtm_int, your_pn=requested_pn,
-                  inv_qry=dataset_vdtm.inv_qry_vdtm,
+                  inv_qry=dataset_vdtm.inv_qry_vdtm, pn_category=dataset_vdtm.pn_vdtm_category,
                   columns=dataset_vdtm.columns_vdtm, warehouses=dataset_vdtm.wh_list_vdtm)
     airlines = checker(company='ABC и ATRAN', master=dataset_vd_airlines.pns_airlines,
                        slave=dataset_vd_airlines.pns_airlines_int, your_pn=requested_pn,
                        inv_qry=dataset_vd_airlines.inv_qry_airlines, columns=dataset_vd_airlines.columns_airlines,
-                       warehouses=dataset_vd_airlines.wh_list_airlines)
+                       warehouses=dataset_vd_airlines.wh_list_airlines,
+                       pn_category=dataset_vd_airlines.pn_airlines_category)
     if vdt == 0 and airlines == 0:
         bot.send_message(m.chat.id, rdm.choice(lists_replies.nb_list))
     else:
