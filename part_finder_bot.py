@@ -34,8 +34,7 @@ def handle_text(m):
             bot.send_message(m.chat.id, str(result))
             a = 1
         else:
-            extra_found = find_machine.extra_finder(slave=slave, mat_type=mat_type, precision=precision,
-                                                    your_pn=your_pn)
+            extra_found = find_machine.extra_finder(slave=slave, master=master, your_pn=your_pn)
             if extra_found:
                 extra_found_extracted = find_machine.extractor(extra_found)
                 extra_found_extracted = find_machine.finder(master=master, slave=slave, your_pn=extra_found_extracted)

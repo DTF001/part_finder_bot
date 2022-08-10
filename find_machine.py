@@ -17,14 +17,14 @@ def finder(master, slave, your_pn):
 
 
 # EXTRA_PART_FINDER
-def extra_finder(slave, mat_type, precision, your_pn):
+def extra_finder(slave, master, your_pn):
     print_list_adv = []
-    items_vdtm = process.extract(your_pn, slave, limit=5)
-    for index in items_vdtm:
-        if index[1] >= precision:
-            for value in range(len(slave)):
-                if index[0] == slave[value] and mat_type[value] == 'CONS':
-                    print_list_adv.append(index)
+    for index in range(len(slave)):
+        if your_pn in slave[index]:
+            found_pn = master[index]
+            for value in range(len(master)):
+                if found_pn == master[value]:
+                    print_list_adv.append(slave[value])
     return print_list_adv
 
 
