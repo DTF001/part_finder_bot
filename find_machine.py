@@ -29,17 +29,6 @@ def extra_finder(slave, master, your_pn):
     return print_list_adv
 
 
-# EXTRACTOR
-def extractor(finder_result):
-    if finder_result:
-        final_list = []
-        for item in finder_result:
-            final_list.append(item[1])
-            max_precision = max(final_list)
-            if max_precision == item[1]:
-                return item[0]
-
-
 # INVENTORY_EXPLORER
 def trax_inventory_explorer(inv_qry, columns, found, warehouses):
     df = pd.DataFrame(data=inv_qry, columns=columns)
