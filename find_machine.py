@@ -19,11 +19,11 @@ def finder(master, slave, your_pn):
 # EXTRA_PART_FINDER
 def extra_finder(slave, master, your_pn, pn_category):
     print_list_adv = []
-    precision = 75
+    precision = 85
     for index in range(len(slave)):
         if your_pn in slave[index]:
             found_pn = master[index]
-            fuzzy = process.extract(your_pn, found_pn)
+            fuzzy = process.extract(found_pn, your_pn)
             for f_index in fuzzy:
                 if f_index[1] >= precision:
                     print(fuzzy)
