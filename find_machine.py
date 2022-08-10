@@ -19,7 +19,7 @@ def finder(master, slave, your_pn):
 # EXTRA_PART_FINDER
 def extra_finder(slave, master, your_pn, pn_category):
     print_list_adv = []
-    precision = 85
+    precision = 50
     for index in range(len(slave)):
         if your_pn in slave[index]:
             found_pn = master[index]
