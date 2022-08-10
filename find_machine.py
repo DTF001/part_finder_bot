@@ -23,8 +23,8 @@ def extra_finder(slave, master, your_pn):
     for index in range(len(slave)):
         if your_pn in slave[index]:
             found_pn = master[index]
+            fuzzy = process.extract(your_pn, found_pn)
             for value in range(len(master)):
-                fuzzy = process.extract(your_pn, found_pn)
                 if found_pn == master[value] and fuzzy[0][1] >= precision and master[value] not in print_list_adv:
                     print_list_adv.append(slave[value])
     print(print_list_adv)
