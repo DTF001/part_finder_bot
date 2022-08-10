@@ -22,10 +22,10 @@ def extra_finder(slave, master, your_pn):
     for index in range(len(slave)):
         if your_pn in slave[index]:
             found_pn = master[index]
-            print(found_pn)
             for value in range(len(master)):
                 if found_pn == master[value]:
                     print_list_adv.append(slave[value])
+    print(print_list_adv)
     return print_list_adv
 
 
