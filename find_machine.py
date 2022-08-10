@@ -29,7 +29,7 @@ def extra_finder(slave, master, your_pn, pn_category):
                     print(fuzzy)
                     for value in range(len(master)):
                         if found_pn == master[value] and pn_category[value] == 'CONS' and \
-                                master[value] not in print_list_adv:
+                                slave[value] not in print_list_adv:
                             print_list_adv.append(slave[value])
     print(print_list_adv)
     return print_list_adv
