@@ -47,9 +47,11 @@ def handle_text(m):
                     a = 1
         return a
 
-    vdt = checker(company='ВДТМ', master=dataset_vdtm.pns_vdtm, slave=dataset_vdtm.pns_vdtm_int, your_pn=requested_pn,
-                  inv_qry=dataset_vdtm.inv_qry_vdtm, pn_category=dataset_vdtm.pn_vdtm_category,
-                  columns=dataset_vdtm.columns_vdtm, warehouses=dataset_vdtm.wh_list_vdtm)
+    vdt = checker(company='VDTM', master=dataset_vdtm.pns_vdtm,
+                  slave=dataset_vdtm.pns_vdtm_int, your_pn=requested_pn,
+                  inv_qry=dataset_vdtm.inv_qry_vdtm, columns=dataset_vdtm.columns_vdtm,
+                  warehouses=dataset_vdtm.wh_list_vdtm,
+                  pn_category=dataset_vdtm.pn_vdtm_category)
     airlines = checker(company='ABC и ATRAN', master=dataset_vd_airlines.pns_airlines,
                        slave=dataset_vd_airlines.pns_airlines_int, your_pn=requested_pn,
                        inv_qry=dataset_vd_airlines.inv_qry_airlines, columns=dataset_vd_airlines.columns_airlines,
