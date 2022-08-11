@@ -26,12 +26,10 @@ def extra_finder(slave, master, your_pn, pn_category):
             fuzzy = process.extract(found_pn, your_pn)
             for f_index in fuzzy:
                 if f_index[1] >= precision:
-                    print(fuzzy)
                     for value in range(len(master)):
                         if found_pn == master[value] and pn_category[value] == 'CONS' and \
                                 slave[value] not in print_list_adv:
                             print_list_adv.append(slave[value])
-    print(print_list_adv)
     return print_list_adv
 
 
